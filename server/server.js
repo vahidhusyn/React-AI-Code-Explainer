@@ -46,6 +46,7 @@ app.post("/api/explain-code", async (req, res)=> {
             return res.status(500).json({error: "Failed to explain the code"});
         }
 
+        console.log(res.text);
         res.json({answer, language: language || "unknown"});
 
     } catch (err) {

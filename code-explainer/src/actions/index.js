@@ -1,9 +1,11 @@
-"use server"
+"use server";
 
 
 export async function explain(prevState, formData) {
     const code = formData.get("code");
     const language = formData.get("language");
+
+    console.log(`Generating explanation for ${language}`);
 
     try {
         const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/explain-code`, {
@@ -17,22 +19,26 @@ export async function explain(prevState, formData) {
             return{
                 success:false,
                 error: `Failed to fetch the results`
-            }
+            };
         }
 
         const data = await res.json();
+        console.log("Response data from API:", data);
+        
+
 
         
         //when res is ok
         return{
             success:true,
-            data
-        }
+            data,
+            error:null,
+        };
 
-    } catch (error) {
+    } catch (err) {
         return{
                 success:false,
-                error: `Error occured: ${error?.message}`,
+                error: `Error occured: ${err?.message}`,
             }
-    }
+    };
 }
