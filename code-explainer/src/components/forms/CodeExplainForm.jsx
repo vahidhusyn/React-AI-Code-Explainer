@@ -2,7 +2,7 @@ import { useActionState } from "react"
 import { explain } from "../../actions"
 import Error from "../Error"
 import CodeExplanation from "../CodeExplanation"
-import Markdown from 'react-markdown';
+import { useState } from "react";
 
 const CodeExplainForm = () => {
   const [formState, formAction, isPending] = useActionState(explain, {
@@ -12,22 +12,29 @@ const CodeExplainForm = () => {
 
   });
 
+  const [language, setLanguage] = useState("");
+  const [code, setCode] = useState("");
+
   return (
     
-    <div className='w-full max-w-xl bg-white p-6 rounded-2xl shadow-lg'>
+    <div className='w-full max-w-4xl bg-white p-6 rounded-2xl shadow-lg'>
       
     <form action={formAction}>
 
       <label className='block mb-2 font-semibold'>Language: </label>
-      <select name='language' className='border rounded-lg p-2 w-full mb-4 bg-transparent'>
+      <select name='language' value={language}
+      onChange={(e)=>setLanguage(e.target.value)} className='border rounded-lg p-2 w-full mb-4 bg-transparent'>
         <option value="javascript">Javascript</option>
+        <option value="HTML">HTML</option>
         <option value="python">Python</option>
         <option value="tailwind">Tailwind</option>
         <option value="react">React</option>
       </select>
       
-      <label className='block mb-2 font-semibold'>Enter your code here: </label>
-      <textarea name='code' required placeholder='Paste your code here' className='border rounded-lg w-full p-3 font-mono text-sm bg bg-transparent min-h-[150px]'/>
+      <label className='block mb-2 font-semibold'>Code: </label>
+      <textarea name='code' required placeholder='Paste your code here'
+      value={code} onChange={(e) => setCode(e.target.value)}
+      className='border rounded-lg w-full p-3 font-mono text-sm bg bg-transparent min-h-[150px]'/>
 
       <button
       type="submit"
@@ -42,11 +49,7 @@ const CodeExplainForm = () => {
         <p className="bg-gray-300 my-3 w-64 p-2 rounded-sm">Thinking...</p>
       ) : formState?.success ? 
       (
-        <div className="bg-gray-100 p-3 rounded shadow">
-          <Markdown>
-            {formState?.data.answer.candidates[0].content.parts[0].text}
-          </Markdown>
-        </div>
+            <CodeExplanation explanation={formState?.data.answer.candidates[0].content.parts[0].text} />
       ) : formState?.success === false ? (
         <Error error={formState?.error} />
       ) : null

@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <header className="flex justify-between items-center w-full max-w-4xl mb-6">
-      <h1 className="text-2xl font-semibold">AI Code Explainer</h1>
+    <header className="flex justify-between mb-6 text-center">
+      <h1 className="text-4xl font-semibold">AI Code Explainer</h1>
     </header>
   )
 }

@@ -40,7 +40,7 @@ app.post("/api/explain-code", async (req, res)=> {
         }
 
         const answer = await ai.models.generateContent({ model: "gemini-2.5-flash",
-        contents: `Explain this code simply:\n\n\`\`\`${language} ||\n${code}\n\`\``});
+        contents: `Explain this code written in ${language} simply:\n\`\`\`\n${code}\n\`\`\``});
 
         if(!answer){
             return res.status(500).json({error: "Failed to explain the code"});
