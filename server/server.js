@@ -9,12 +9,14 @@ const app = express()
 
 app.use(helmet());
 
-app.use(cors())
+const CORSoptions =  {
+        origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Adjust methods as needed
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true,
+}
 
-        // origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-        // methods: ['GET', 'POST', 'PUT', 'DELETE'], // Adjust methods as needed
-        // allowedHeaders: ['Content-Type', 'Authorization'],
-        // credentials: true,
+app.use(cors(CORSoptions))
 
 
 const limiter = rateLimit({

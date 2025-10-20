@@ -1,6 +1,7 @@
 import CTA from "./CTA"
 import Header from "./Header"
 import CodeExplainForm from "./forms/CodeExplainForm"
+import "../App.css"
 
 const CodeEntry = ()=> {
   return (
@@ -10,6 +11,7 @@ const CodeEntry = ()=> {
       <CodeExplainForm/>
       
     </div>
+    
   )
 }
 

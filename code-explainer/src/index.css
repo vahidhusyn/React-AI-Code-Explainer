@@ -6,3 +6,9 @@
 @theme{
     --font-oswald: 'Oswald', 'sans-serif';
 }
+
+ #root { /* Or your specific root element ID/class */
+      height: 100vh;
+      display: flex; /* Use flexbox for child layout */
+      flex-direction: column; /* Stack children vertically */
+    }

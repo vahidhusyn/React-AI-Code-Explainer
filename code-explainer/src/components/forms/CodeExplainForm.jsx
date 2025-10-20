@@ -17,7 +17,7 @@ const CodeExplainForm = () => {
 
   return (
     
-    <div className='w-full max-w-4xl bg-white p-6 rounded-2xl shadow-lg'>
+    <div className='w-full max-w-2xl bg-white p-6 shadow-2xl'>
       
     <form action={formAction}>
 
@@ -29,6 +29,7 @@ const CodeExplainForm = () => {
         <option value="python">Python</option>
         <option value="tailwind">Tailwind</option>
         <option value="react">React</option>
+        <option value="css">CSS</option>
       </select>
       
       <label className='block mb-2 font-semibold'>Code: </label>
