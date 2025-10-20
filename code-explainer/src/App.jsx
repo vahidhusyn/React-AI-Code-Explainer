@@ -1,4 +1,4 @@
-import CodeEntry from './components/codeEntry'
+import CodeEntry from './components/CodeEntry'
 
 function App() {
 
