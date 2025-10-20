@@ -3,7 +3,7 @@ import remarkGfm from 'remark-gfm';
 
 const CodeExplanation = ({explanation}) => {
   return (
-    <div className='w-full max-w-4xl mt-6 p-6 rounded-2xl shadow-lg bg-gray-700 text-white'>
+    <div className='w-full max-w-4xl mt-6 p-6 rounded-2xl shadow-black shadow-xs bg-gray-700 text-white'>
       <h2 className='text-xl font-semibold mb-2'>Explanation:</h2>
        <Markdown remarkPlugins={[remarkGfm]}>{explanation}</Markdown>
     </div>

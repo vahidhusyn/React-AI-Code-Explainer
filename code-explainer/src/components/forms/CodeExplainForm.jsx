@@ -17,25 +17,25 @@ const CodeExplainForm = () => {
 
   return (
     
-    <div className='w-full max-w-2xl lg:max-w-1/2 bg-gray-800 text-white p-6 shadow-2xl rounded-b-2xl'>
+    <div className='w-full max-w-2xl lg:max-w-1/2 bg-gray-700 text-white p-6 shadow-2xl rounded-b-2xl'>
       
     <form action={formAction}>
 
       <label className='block mb-2 font-semibold'>Language: </label>
       <select name='language' value={language}
-      onChange={(e)=>setLanguage(e.target.value)} className='border rounded-lg p-2 w-full mb-4 bg-transparent'>
-        <option value="javascript">Javascript</option>
-        <option value="HTML">HTML</option>
-        <option value="python">Python</option>
-        <option value="tailwind">Tailwind</option>
-        <option value="react">React</option>
-        <option value="css">CSS</option>
+      onChange={(e)=>setLanguage(e.target.value)} className='border rounded-lg p-2 w-full mb-4 bg-gray-800'>
+        <option class="bg-gray-800 text-white" value="javascript">Javascript</option>
+        <option class="bg-gray-800 text-white" value="python">Python</option>
+        <option class="bg-gray-800 text-white" value="HTML">HTML</option>
+        <option class="bg-gray-800 text-white" value="tailwind">Tailwind</option>
+        <option class="bg-gray-800 text-white" value="react">React</option>
+        <option class="bg-gray-800 text-white" value="css">CSS</option>
       </select>
       
       <label className='block mb-2 font-semibold'>Code: </label>
       <textarea name='code' required placeholder='Paste your code here'
       value={code} onChange={(e) => setCode(e.target.value)}
-      className='border rounded-lg w-full p-3 font-mono text-sm bg bg-transparent min-h-[150px]'/>
+      className='border rounded-lg w-full p-3 font-mono text-sm bg bg-gray-700 min-h-[150px]'/>
 
       <button
       type="submit"
