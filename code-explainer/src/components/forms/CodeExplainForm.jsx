@@ -17,7 +17,7 @@ const CodeExplainForm = () => {
 
   return (
     
-    <div className='w-full max-w-2xl bg-white p-6 shadow-2xl'>
+    <div className='w-full max-w-2xl lg:max-w-1/2 bg-gray-800 text-white p-6 shadow-2xl rounded-b-2xl'>
       
     <form action={formAction}>
 

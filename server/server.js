@@ -11,7 +11,7 @@ app.use(helmet());
 
 const CORSoptions =  {
         origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Adjust methods as needed
+        methods: ['GET', 'POST'], // Adjust methods as needed
         allowedHeaders: ['Content-Type', 'Authorization'],
         credentials: true,
 }

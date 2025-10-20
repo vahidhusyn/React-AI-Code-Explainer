@@ -5,6 +5,7 @@
 
 @theme{
     --font-oswald: 'Oswald', 'sans-serif';
+    --color-cadet: #1F214D;
 }
 
  #root { /* Or your specific root element ID/class */
