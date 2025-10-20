@@ -47,7 +47,7 @@ const CodeExplainForm = () => {
 
       {
       isPending ? (
-        <p className="bg-gray-300 my-3 w-64 p-2 rounded-sm">Thinking...</p>
+        <p className="bg-gray-700 my-3 w-64 p-2 rounded-sm">Thinking...</p>
       ) : formState?.success ? 
       (
             <CodeExplanation explanation={formState?.data.answer.candidates[0].content.parts[0].text} />
