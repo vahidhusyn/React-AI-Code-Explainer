@@ -6,6 +6,9 @@
 @theme{
     --font-oswald: 'Oswald', 'sans-serif';
     --color-cadet: #1F214D;
+    --color-accent1: #A8DADC;
+    --color-accent2: #B39CD0;
+    --color-myblack: #2C2C2C;
 }
 
  #root { /* Or your specific root element ID/class */

@@ -8,7 +8,8 @@ export async function explain(prevState, formData) {
     console.log(`Generating explanation for ${language}`);
 
     try {
-        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/explain-code`, {
+        // console.log(import.meta.env.VITE_API_BASE_URL);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/explain-code`, {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({code, language}),
