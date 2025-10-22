@@ -4,7 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "webpack"
+
   },
   "dependencies": {
     "@google/genai": "^1.25.0",
@@ -14,4 +16,5 @@
     "express-rate-limit": "^8.1.0",
     "helmet": "^8.1.0"
   }
+  
 }
